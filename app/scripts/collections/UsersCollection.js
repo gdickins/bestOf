@@ -12,4 +12,4 @@ const UsersCollection = Backbone.Collection.extend({
 
 let user = new UserCollection();
 
-default export userCollection;
+export default userCollection;
