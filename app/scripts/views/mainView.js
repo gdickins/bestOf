@@ -10,7 +10,6 @@ const MainView = Backbone.View.extend({
   initialize: function() {
     placesCollection.on('add', () => {
       this.render();
-      console.log(this, ' this');
     });
     placesCollection.fetch(); //undefined...
   },

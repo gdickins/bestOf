@@ -7,7 +7,7 @@ const PlaceItemView = Backbone.View.extend({
   template : function() {
     return `
       <h3>
-      <a href="#posts/${this.model.get('id')}">${this.model.get('title')}>${this.model.get('title')}</a>
+      <a href="#posts/${this.model.get('id')}">${this.model.get('title')}</a>
       </h3>
       <img src="${this.model.get('imgurl')}" class="place-item-image" />
       <p class="username">${this.model.get('username')}</p>

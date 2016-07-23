@@ -1,2 +1,8 @@
 // @import "../../node_modules/normalize-scss/sass/normalize/import-now";
 @import "_variables.scss";
+
+.place-item-image {
+  // height: 15%;
+  width: 25%;
+  background-image: contain;
+}

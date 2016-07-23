@@ -3,6 +3,7 @@ import Backbone from 'backbone';
 
 // import placesCollection from './collections/PlacesCollection';
 import LoginView from './views/loginView';
+import LogoutView from './views/logoutView';
 import SignupView from './views/signupView';
 import MainView from './views/mainView';
 
@@ -29,8 +30,10 @@ signupFunction : function() {
 },
 mainFunction  : function() {
   let main = new MainView();
+  let logout = new LogoutView();
   main.render();
-  $('.container').empty().append(main.$el);
+  logout.render();
+  $('.container').empty().append(main.$el).prepend(logout.$el);
 
 },
 
