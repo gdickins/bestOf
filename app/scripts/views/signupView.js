@@ -8,13 +8,14 @@ const SignupView = Backbone.View.extend({
   tagName: 'form',
   idName: 'signUp',
   events: {
-    'click #signUp-btn': 'signUpfunction'
+    'click input[type="submit"]': 'signUpfunction'
   },
   signUpfunction : function(evt) {
     evt.preventDefault();
     let email = this.$('input[name="email"]').val();
     let username = this.$('input[name="username"]').val();
     let password = this.$('input[name="password"]').val();
+    // console.log('hi');
     session.save({
       'email' : email,
       'username' : username,
@@ -25,11 +26,12 @@ const SignupView = Backbone.View.extend({
           console.log('model ', model);
           console.log('response ', response);
           model.unset('password');
-                window.localStorage.setItem('authtoken', authtoken);
-                router.navigate(`user/${response._id}`, {trigger:true});
-                $('input[name="username"]').val('');
-                $('input[name="password"]').val('');
-                $('input[name="password2"]').val('');
+          // NEED TO ADD A HEADER TO PROPERLY SUBMIT INFO
+            window.localStorage.setItem('authtoken', authtoken);
+            // router.navigate(`user/${response.id}`, {trigger:true});
+            $('input[name="username"]').val('');
+            $('input[name="password"]').val('');
+            $('input[name="password2"]').val('');
         }
   });
   },
