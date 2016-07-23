@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import Backbone from 'backbone';
 
+import placesCollection from './collections/PlacesCollection';
 import session from './models/sessionModel';
 import LoginView from './views/loginView';
 import LogoutView from './views/logoutView';
@@ -19,16 +20,19 @@ routes: {
 },
 
 loginFunction : function(){
+  placesCollection.off();
   let login = new LoginView();
   login.render();
   $('.container').empty().append(login.$el);
 },
 signupFunction : function() {
+  placesCollection.off();
   let signup = new SignupView();
   signup.render();
   $('.container').empty().append(signup.$el);
 },
 homeFunction  : function() {
+  placesCollection.off();
   let main = new MainView();
   let header = new HeaderView();
   main.render();
