@@ -14,9 +14,9 @@ routes: {
   '/*'      : 'loginFunction',
   'login'   : 'loginFunction',
   'signup'  : 'signupFunction',
-  // 'logout'  : logoutFunction,
   'header'  : 'headerFunction',
   'home'    : 'homeFunction',
+  'posts/:id' : 'placeViewFunction'
 },
 
 loginFunction : function(){
@@ -40,6 +40,9 @@ homeFunction  : function() {
   $('.container').empty().append(header.$el).append(main.$el);
   // console.log(session);
 },
+placeViewFunction : function(){
+
+}
 
 });
 

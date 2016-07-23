@@ -12,14 +12,16 @@ const SignupView = Backbone.View.extend({
   },
   signUpfunction : function(evt) {
     evt.preventDefault();
-    let email = this.$('input[name="email"]').val();
+    let name = this.$('input[name="name"]').val();
     let username = this.$('input[name="username"]').val();
+    let email = this.$('input[name="email"]').val();
     let password = this.$('input[name="password"]').val();
     // console.log('hi');
     session.save({
       data: JSON.stringify({
-        'email'    : email,
+        'name'     : name,
         'username' : username,
+        'email'    : email,
         'password' : password
       }),
     }, {
@@ -50,8 +52,9 @@ const SignupView = Backbone.View.extend({
   template: function(){
     return `
       <h2>Sign Up</h2>
+      <input type="text" name="name" placeholder="name">
+      <input type="text" name="usename" placeholder="username">
       <input type="text" name="email" placeholder="email">
-      <input type="text" name="username" placeholder="username">
       <input type="password" name="password" placeholder="password">
       <input type="submit" name="submit" value="submit">
       <input type="button" name="cancel" value="cancel">
