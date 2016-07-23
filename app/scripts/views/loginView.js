@@ -5,7 +5,6 @@ import router from '../router';
 import session from '../models/sessionModel';
 import user from '../models/userModel';
 
-
 const LoginView = Backbone.View.extend({
   tagName: 'div',
   idName: 'login',
@@ -14,8 +13,8 @@ const LoginView = Backbone.View.extend({
       <h2>Login</h2>
       <input type="text" name="email" placeholder="email address">
       <input type="password" name="password" placeholder="password">
-      <input type="submit" name="submit" value="login">
-      <input type="button" name="cancel" value="cancel">
+      <input class="button" type="submit" name="submit" value="login">
+      <input class="button" type="button" name="cancel" value="cancel">
     `;
   },
   events: {

@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import Backbone from 'backbone';
 
-const placeModel = Backbone.Model.extend({
+const PlaceModel = Backbone.Model.extend({
   idAttribute: 'id',
   urlRoot: `https://limitless-falls-88798.herokuapp.com/places`,
   defaults: {
@@ -9,8 +9,7 @@ const placeModel = Backbone.Model.extend({
     address: '',
     imgurl: '',
     rank: 0
-  },
-
+  }
 });
 
-export default placeModel;
+export default PlaceModel;

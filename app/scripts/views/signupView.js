@@ -17,11 +17,17 @@ const SignupView = Backbone.View.extend({
     let password = this.$('input[name="password"]').val();
     // console.log('hi');
     session.save({
-      'email' : email,
-      'username' : username,
-      'password' : password
+      data: JSON.stringify({
+        'email'    : email,
+        'username' : username,
+        'password' : password
+      }),
     }, {
         url : `https://limitless-falls-88798.herokuapp.com/user`,
+        headers: {
+          Authorization: 'Basic '
+        },
+        contentType: 'application/json',
         success : function(model, response) {
           console.log('model ', model);
           console.log('response ', response);
