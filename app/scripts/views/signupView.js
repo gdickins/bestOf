@@ -23,18 +23,23 @@ const SignupView = Backbone.View.extend({
         'password' : password
       }),
     }, {
-        url : `https://limitless-falls-88798.herokuapp.com/user`,
-        headers: {
-          Authorization: 'Basic '
-        },
+        url : `https://limitless-falls-88798.herokuapp.com/users`,
+        // headers: {
+        //   Authorization: 'Basic '
+        // },
         contentType: 'application/json',
         success : function(model, response) {
+          localStorage.removeItem('authtoken');
+          localStorage.removeItem('userId');
+          localStorage.removeItem('name');
           console.log('model ', model);
           console.log('response ', response);
           model.unset('password');
           // NEED TO ADD A HEADER TO PROPERLY SUBMIT INFO
             window.localStorage.setItem('authtoken', authtoken);
-            // router.navigate(`user/${response.id}`, {trigger:true});
+            window.localStorage.setItem('userId', authtoken);
+            window.localStorage.setItem('name', authtoken);
+            router.navigate(`home`, {trigger:true});
             $('input[name="username"]').val('');
             $('input[name="password"]').val('');
             $('input[name="password2"]').val('');
@@ -48,7 +53,7 @@ const SignupView = Backbone.View.extend({
       <input type="text" name="email" placeholder="email">
       <input type="text" name="username" placeholder="username">
       <input type="password" name="password" placeholder="password">
-      <input type="submit" name="submit" value="login">
+      <input type="submit" name="submit" value="submit">
       <input type="button" name="cancel" value="cancel">
     `;
   },
