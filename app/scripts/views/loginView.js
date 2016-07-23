@@ -5,7 +5,6 @@ import router from '../router';
 import session from '../models/sessionModel';
 import user from '../models/userModel';
 
-
 const LoginView = Backbone.View.extend({
   tagName: 'div',
   idName: 'login',
