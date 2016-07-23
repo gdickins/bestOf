@@ -11,12 +11,12 @@ import HeaderView from './views/headerView';
 
 const Router = Backbone.Router.extend({
 routes: {
-  '/*'      : 'loginFunction',
   'login'   : 'loginFunction',
   'signup'  : 'signupFunction',
   'header'  : 'headerFunction',
   'home'    : 'homeFunction',
-  'posts/:id' : 'placeViewFunction'
+  'places/:id' : 'placeDetailFunction',
+  // '/*'      : 'loginFunction',
 },
 
 loginFunction : function(){
@@ -40,8 +40,13 @@ homeFunction  : function() {
   $('.container').empty().append(header.$el).append(main.$el);
   // console.log(session);
 },
-placeViewFunction : function(){
-
+placeDetailFunction : function(){
+  placesCollection.off();
+  let header = new HeaderView();
+  let placeView = new PlaceView(id);
+  header.render();
+  placeView.render();
+  $('.container').empty().append(header.$el).append(placeView.$el);
 }
 
 });
