@@ -36,7 +36,7 @@
             }
             ```
     - Put closing bracket on new line
-    - Functions must have a single-space before and after ()s
+    - Functions must have a single-space after ()s
   4. **Quotes**
     - HTML quotes must be in double-quotes, `""`
       - This includes all HTML elements/attributes that are created in javascript
