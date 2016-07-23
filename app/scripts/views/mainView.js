@@ -3,24 +3,19 @@ import Backbone from 'backbone';
 
 import router from '../router';
 import placesCollection from '../collections/PlacesCollection';
+import PlaceModel from '../models/placeModel';
+import PlaceItemView from './placeItemView';
 
 const MainView = Backbone.View.extend({
   initialize: function() {
-    // placesCollection.on('add', () => {
-    //   console.log(this, ' this');
-    // });
-    console.log(placesCollection.fetch());
-    $.ajax({
-      type: 'GET',
-      url: `https://limitless-falls-88798.herokuapp.com/places`,
-      dataType: 'json',
-      success: function (response){
-        console.log(response);
-      }
+    placesCollection.on('add', () => {
+      this.render();
+      console.log(this, ' this');
     });
+    placesCollection.fetch(); //undefined...
   },
   tagName: 'div',
-  idName: 'main',
+  id: 'main',
   events: {},
   template: function() {
     return `
@@ -28,10 +23,18 @@ const MainView = Backbone.View.extend({
       </ul>
     `;
   },
-  // render: function() {
-  //   this.$el.html(this.template());
-  //   return this;
-  // }
+  render: function() {
+    this.$el.html(this.template());
+
+    placesCollection.forEach((place) => {
+      let placeItemView = new PlaceItemView({
+        model : place
+      });
+      placeItemView.render();
+      this.$('ul').append(placeItemView.$el);
+    });
+    return this;
+  }
 });
 
 export default MainView;
