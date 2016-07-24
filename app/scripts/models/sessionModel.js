@@ -9,13 +9,15 @@ const Session = Backbone.Model.extend({
   defaults: {
       email: '',
   },
-    parse: function(authtoken) {
-        if (authtoken) {
+    parse: function(session) {
+        if (session) {
+          console.log(session);
           return {
-            // email: response.email,
-            // userId: response.id,
+            'email': session.email,
+            'userId': session.id,
           'authtoken': authtoken
       };
+
     }
   },
   login: function(email, password) {

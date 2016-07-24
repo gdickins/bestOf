@@ -41,12 +41,12 @@ homeFunction  : function() {
   // console.log(session);
 },
 placeDetailFunction : function(){
-  placesCollection.off();
-  let header = new HeaderView();
-  let placeView = new PlaceView(id);
-  header.render();
-  placeView.render();
-  $('.container').empty().append(header.$el).append(placeView.$el);
+  // placesCollection.off();
+  // let header = new HeaderView();
+  // let placeView = new PlaceView(id);
+  // header.render();
+  // placeView.render();
+  // $('.container').empty().append(header.$el).append(placeView.$el);
 }
 
 });

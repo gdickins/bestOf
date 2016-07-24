@@ -6,12 +6,14 @@ import usersCollection from '../collections/UsersCollection';
 import placesCollection from '../collections/PlacesCollection';
 
 const PlaceView = Backbone.View.extend({
-  initialize: function(userId) {
-    this.model = placesCollection.get(userId);
-    console.log(this.model);
-    // this.model.on('change', (model) =>{
-    //   this.render();
-    // });
+  initialize: function(id) {
+    // console.log(id);
+    this.model = placesCollection.get(id);
+    console.log(this);
+    this.model.on('change', (response) =>{
+      console.log(response);
+      // this.render();
+    });
   },
   tagName : 'div',
   className : 'place-view',
