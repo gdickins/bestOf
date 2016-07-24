@@ -1,11 +1,12 @@
 import $ from 'jquery';
 import Backbone from 'backbone';
 
-// import placesCollection from './collections/PlacesCollection';
+import session from './models/sessionModel';
 import LoginView from './views/loginView';
 import LogoutView from './views/logoutView';
 import SignupView from './views/signupView';
 import MainView from './views/mainView';
+import HeaderView from './views/headerView';
 
 const Router = Backbone.Router.extend({
 routes: {
@@ -13,12 +14,11 @@ routes: {
   'login'   : 'loginFunction',
   'signup'  : 'signupFunction',
   // 'logout'  : logoutFunction,
-  // 'header'  : headerFunction,
-  'main'    : 'mainFunction',
+  'header'  : 'headerFunction',
+  'home'    : 'homeFunction',
 },
 
 loginFunction : function(){
-  // console.log('login is running');
   let login = new LoginView();
   login.render();
   $('.container').empty().append(login.$el);
@@ -28,13 +28,13 @@ signupFunction : function() {
   signup.render();
   $('.container').empty().append(signup.$el);
 },
-mainFunction  : function() {
+homeFunction  : function() {
   let main = new MainView();
-  let logout = new LogoutView();
+  let header = new HeaderView();
   main.render();
-  logout.render();
-  $('.container').empty().append(main.$el).prepend(logout.$el);
-
+  header.render();
+  $('.container').empty().append(header.$el).append(main.$el);
+  // console.log(session);
 },
 
 });

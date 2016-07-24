@@ -24,20 +24,24 @@ const Session = Backbone.Model.extend({
       'password': password
     }, {
         success : (model, response) => {
-          // console.log('model ', model);
-          // console.log('response ', response);
-          window.localStorage.setItem('authtoken', response.auth_token);
+          // console.log('this ', this);
+          // console.log('session ', session);
+          window.localStorage.setItem('authtoken', model.attributes.authtoken.auth_token);
+          window.localStorage.setItem('userId', model.attributes.authtoken.id);
+          window.localStorage.setItem('name', model.attributes.authtoken.name);
           this.unset('password');
-          router.navigate('main', {trigger: true});
+          session.unset('password');
+          router.navigate('home', {trigger: true});
         },
         error : function() {
           console.log('ERROR! Check sessionModel.js');
         }});
     },
     retrieve: function() {
-      console.log(session.fetch(this));
-      this.fetch({
-        url: `https://limitless-falls-88798.herokuapp.com/users/`
+      // console.log(window.localStorage.getItem('userId'));
+      let userId = window.localStorage.getItem('userId');
+      session.fetch({
+        url: `https://limitless-falls-88798.herokuapp.com/users/` + userId
       });
     }
 });
