@@ -8,25 +8,31 @@ const Session = Backbone.Model.extend({
   urlRoot: `https://limitless-falls-88798.herokuapp.com/login`,
   defaults: {
       email: '',
+      userId: '',
+      authtoken: '',
+      name: ''
   },
 
-    parse: function(model, response) {
+    // this model now successfully has the authtoken from the parse function
+    parse: function(response) {
         if (response) {
-          // console.log(model, response);
           return {
-            'email': response.email,
-            'userId': response.id,
-            'name' : response.name
+            email: response.email,
+            userId: response.id,
+            authtoken: response.auth_token,
+            name : response.name
 
       };
     }
   },
   login: function(email, password) {
     this.save({
-      'email': email,
-      'password': password
-    }, {
+      'email' : email,
+      'password': password,
+    },
+    {
         success : (model, response) => {
+
 
 
           window.localStorage.setItem('authtoken', model.get('authtoken'));
@@ -37,22 +43,28 @@ const Session = Backbone.Model.extend({
 
           model.unset('password');
           session.unset('password');
+
           router.navigate('home', {trigger: true});
         },
         error : function() {
           console.log('ERROR! Check sessionModel.js');
-        }});
-    },
-    retrieve: function() {
-      let userId = window.localStorage.getItem('userId');
-      session.fetch({
-        url: `https://limitless-falls-88798.herokuapp.com/users/` + userId
+        }
       });
+    },
+    retrieve: function () {
+      session = {
+          'authtoken' : localStorage.getItem('authtoken'),
+          'email' : localStorage.getItem('email'),
+          'name' : localStorage.getItem('name'),
+          'userId' : localStorage.getItem('userId'),
+      };
+      console.log('refreshed session ', session);
       return session;
     }
 });
 
 let session = new Session();
-// console.log('session ', session);
+// session = session.attributes;
+console.log(session);
 
 export default session;
