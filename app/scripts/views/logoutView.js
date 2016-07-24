@@ -5,17 +5,17 @@ import Backbone from 'backbone';
 import session from '../models/sessionModel';
 
 const LogoutView = Backbone.View.extend({
-// tagName: 'div',
+tagName: 'div',
 className: 'logout',
 events:{
   'click .logout-btn': 'logoutFunction'
 },
 logoutFunction: function(evt){
+  console.log(session);
   evt.preventDefault();
   session.save(null, {
     url: `https://limitless-falls-88798.herokuapp.com/login`,
     success: (model, response) => {
-      console.log(this);
       model.unset('password');
       localStorage.removeItem('authtoken');
       localStorage.removeItem('userId');
