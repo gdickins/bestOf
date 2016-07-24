@@ -7,7 +7,8 @@ import placesCollection from '../collections/PlacesCollection';
 
 const PlaceView = Backbone.View.extend({
   initialize: function(id) {
-    // console.log(id);
+    console.log(id);
+    console.log(this.model);
     this.model = placesCollection.get(id);
     console.log(this);
     this.model.on('change', (response) =>{

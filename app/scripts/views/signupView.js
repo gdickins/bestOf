@@ -16,7 +16,6 @@ const SignupView = Backbone.View.extend({
     let username = this.$('input[name="username"]').val();
     let email = this.$('input[name="email"]').val();
     let password = this.$('input[name="password"]').val();
-    // console.log('hi');
     session.save({
       data: JSON.stringify({
         'name'     : name,
@@ -32,19 +31,21 @@ const SignupView = Backbone.View.extend({
         contentType: 'application/json',
         success : function(model, response) {
           localStorage.removeItem('authtoken');
-          localStorage.removeItem('userId');
+          localStorage.removeItem('email');
           localStorage.removeItem('name');
+          localStorage.removeItem('userId');
           console.log('model ', model);
           console.log('response ', response);
           model.unset('password');
           // NEED TO ADD A HEADER TO PROPERLY SUBMIT INFO
             window.localStorage.setItem('authtoken', authtoken);
-            window.localStorage.setItem('userId', authtoken);
-            window.localStorage.setItem('name', authtoken);
+            window.localStorage.setItem('email', email);
+            window.localStorage.setItem('name', name);
+            window.localStorage.setItem('userId', userId);
             router.navigate(`home`, {trigger:true});
             $('input[name="username"]').val('');
             $('input[name="password"]').val('');
-            $('input[name="password2"]').val('');
+            // $('input[name="password2"]').val('');
         }
   });
   },

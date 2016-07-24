@@ -8,7 +8,12 @@ const PlaceModel = Backbone.Model.extend({
     title: '',
     address: '',
     imgurl: '',
-    rank: 0
+    vote: 0
+  },
+  vote: function () {
+    var newRank = this.get('votes') + 1;
+    this.set('votes', newVotes);
+    this.save();
   }
 });
 

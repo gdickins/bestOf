@@ -11,18 +11,18 @@ events:{
   'click .logout-btn': 'logoutFunction'
 },
 logoutFunction: function(evt){
-  // console.log(session);
-  // console.log(session.attributes.authtoken);
-  // console.log(session.attributes.email);
-  // console.log(session.attributes.name);
-  // console.log(session.attributes.userId);
+  console.log('session BEFORE', session);
+  // let  logoutSession = session.get('attributes');
   evt.preventDefault();
-
-  session.save(null, {
+  session.save(null,{
     url: `https://limitless-falls-88798.herokuapp.com/login`,
     success: (model, response) => {
-      model.unset('password');
-      // console.log(session);
+      console.log('success working in logout');
+      console.log('model AFTER', model);
+      // console.log('session AFTER ', model);
+      // console.log('response AFTER', response);
+      // model.unset('password');
+      // model.unset('authtoken', response.auth_token);
       localStorage.removeItem('authtoken');
       localStorage.removeItem('email');
       localStorage.removeItem('name');
