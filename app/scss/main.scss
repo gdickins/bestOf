@@ -1,25 +1,30 @@
 // @import "../../node_modules/normalize-scss/sass/normalize/import-now";
 @import "_variables.scss";
+@import "loginView.scss";
+@import "signupView.scss";
 
 body {
   font-family: Avenir;
   color: $text;
   background: $background;
 }
-button {
-  border: none;
-  background: $btn-color;
-  color: $btn-color;
-  border-radius: 2px;
-  &:hover {
-    background: $btn-color;
-  }
-}
 input {
   border: none;
-  padding: 1%;
+  padding: 3%;
   border-radius: 2px;
+  width: 90%;
+  display: block;
+  margin: 3% auto;
 }
+.button {
+  background: $btn-background;
+  color: $btn-color;
+  &:hover {
+    background-color: $btn-hover;
+  }
+}
+
+
 
 .place-item-image {
   width: 25%;

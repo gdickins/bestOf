@@ -1,20 +1,43 @@
+#login {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center; }
+  #login h2 {
+    text-align: 0; }
+  #login input {
+    border: none;
+    padding: 3%;
+    border-radius: 2px;
+    width: 90%;
+    display: block;
+    margin: 3% auto; }
+  #login .button {
+    background: #007A87;
+    color: #FFF; }
+    #login .button:hover {
+      background-color: #009AAB; }
+
+#signup h2 {
+  text-align: center; }
+
 body {
   font-family: Avenir;
   color: #484848;
   background: #EDEFED; }
 
-button {
-  border: none;
-  background: #FFF;
-  color: #FFF;
-  border-radius: 2px; }
-  button:hover {
-    background: #FFF; }
-
 input {
   border: none;
-  padding: 1%;
-  border-radius: 2px; }
+  padding: 3%;
+  border-radius: 2px;
+  width: 90%;
+  display: block;
+  margin: 3% auto; }
+
+.button {
+  background: #007A87;
+  color: #FFF; }
+  .button:hover {
+    background-color: #009AAB; }
 
 .place-item-image {
   width: 25%;
