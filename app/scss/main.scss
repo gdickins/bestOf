@@ -1,8 +1,27 @@
 // @import "../../node_modules/normalize-scss/sass/normalize/import-now";
 @import "_variables.scss";
 
+body {
+  font-family: Avenir;
+  color: $text;
+  background: $background;
+}
+button {
+  border: none;
+  background: $btn-color;
+  color: $btn-color;
+  border-radius: 2px;
+  &:hover {
+    background: $btn-color;
+  }
+}
+input {
+  border: none;
+  padding: 1%;
+  border-radius: 2px;
+}
+
 .place-item-image {
-  // height: 15%;
   width: 25%;
   background-image: contain;
 }
