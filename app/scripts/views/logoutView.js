@@ -12,10 +12,12 @@ events:{
 },
 logoutFunction: function(evt){
   evt.preventDefault();
+
   session.save(null, {
+
     url: `https://limitless-falls-88798.herokuapp.com/login`,
     success: (model, response) => {
-      console.log(this);
+
       model.unset('password');
       localStorage.removeItem('authtoken');
       localStorage.removeItem('userId');
