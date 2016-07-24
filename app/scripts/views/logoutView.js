@@ -11,6 +11,7 @@ events:{
   'click .logout-btn': 'logoutFunction'
 },
 logoutFunction: function(evt){
+
   console.log('session BEFORE', session);
   let logoutSession = session.attributes;
   console.log(logoutSession);
@@ -25,6 +26,7 @@ logoutFunction: function(evt){
       model.clear();
       // model.unset('authtoken', response.auth_token);
       // model.unset('password');
+
       localStorage.removeItem('authtoken');
       localStorage.removeItem('email');
       localStorage.removeItem('name');
