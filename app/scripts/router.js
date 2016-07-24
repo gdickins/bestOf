@@ -8,6 +8,7 @@ import LogoutView from './views/logoutView';
 import SignupView from './views/signupView';
 import MainView from './views/mainView';
 import HeaderView from './views/headerView';
+import SubmitItemView from './views/submitItemView';
 
 const Router = Backbone.Router.extend({
 routes: {
@@ -16,6 +17,7 @@ routes: {
   'header'  : 'headerFunction',
   'home'    : 'homeFunction',
   'places/:id' : 'placeDetailFunction',
+  'submit' : 'submitPlaceFunction'
   // '/*'      : 'loginFunction',
 },
 
@@ -40,6 +42,11 @@ homeFunction  : function() {
   $('.container').empty().append(header.$el).append(main.$el);
   // console.log(session);
 },
+submitPlaceFunction : function () {
+  let submitItem = new SubmitItemView();
+  submitItem.render();
+  $('.container').empty().append(submitItem.$el);
+},
 placeDetailFunction : function(){
   // placesCollection.off();
   // let header = new HeaderView();
@@ -47,7 +54,8 @@ placeDetailFunction : function(){
   // header.render();
   // placeView.render();
   // $('.container').empty().append(header.$el).append(placeView.$el);
-}
+},
+
 
 });
 
