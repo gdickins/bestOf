@@ -14,11 +14,14 @@ logoutFunction: function(evt){
   evt.preventDefault();
   session.save(null, {
     url: `https://limitless-falls-88798.herokuapp.com/login`,
-    success: function(model, response) {
-      // this.unset('password');
-      console.log('model ', model);
-      console.log('response ', response);
-      router.navigate('home', {trigger:true});
+    success: (model, response) => {
+      console.log(this);
+      model.unset('password');
+      localStorage.removeItem('authtoken');
+      localStorage.removeItem('userId');
+      localStorage.removeItem('name');
+      console.log('User logged out!');
+      router.navigate('login', {trigger:true});
     }
   });
 },

@@ -2,6 +2,7 @@ import $ from 'jquery';
 import Backbone from 'backbone';
 import router from '../router';
 import settings from '../settings';
+import UserModel from '../models/userModel';
 
 
 const UsersCollection = Backbone.Collection.extend({
@@ -10,6 +11,6 @@ const UsersCollection = Backbone.Collection.extend({
 });
 
 
-let user = new UserCollection();
+let usersCollection = new UsersCollection();
 
-export default userCollection;
+export default usersCollection;
