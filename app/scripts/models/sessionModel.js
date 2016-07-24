@@ -25,20 +25,21 @@ const Session = Backbone.Model.extend({
   },
   login: function(email, password) {
     this.save({
-      'email': email,
+      'email' : email,
       'password': password,
     },
     {
         success : (model, response) => {
+          this.unset('password');
           window.localStorage.setItem('authtoken', response.auth_token);
-          window.localStorage.setItem('email', response.email);
+          // window.localStorage.setItem('email', response.email);
           window.localStorage.setItem('name', response.name);
-          window.localStorage.setItem('userId', response.id);
+          // window.localStorage.setItem('userId', response.id);
           // model.set('authtoken', response.auth_token);
           // model.set('email', response.email);
           // model.set('name', response.name);
           // model.set('userIt', response.id);
-          this.unset('password');
+          // model.unset('password');
           router.navigate('home', {trigger: true});
         },
         error : function() {
@@ -46,19 +47,20 @@ const Session = Backbone.Model.extend({
         }
       });
     },
-    retrieve: function() {
+    retrieve: function () {
       session = {
           'authtoken' : localStorage.getItem('authtoken'),
           'email' : localStorage.getItem('email'),
           'name' : localStorage.getItem('name'),
           'userId' : localStorage.getItem('userId'),
       };
-      console.log(session);
+      console.log('refreshed session ', session);
       return session;
     }
 });
 
 let session = new Session();
-// console.log(session);
+// session = session.attributes;
+console.log(session);
 
 export default session;
