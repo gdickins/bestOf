@@ -9,17 +9,16 @@ const Session = Backbone.Model.extend({
   defaults: {
       email: '',
   },
-    parse: function(response) {
+
+    parse: function(model, response) {
         if (response) {
-           console.log(response);
+          // console.log(model, response);
           return {
             'email': response.email,
-           'userId': response.id,
-      //  'authtoken': response.auth_token,
-             'name': response.name
+            'userId': response.id,
+            'name' : response.name
 
       };
-
     }
   },
   login: function(email, password) {
@@ -28,11 +27,14 @@ const Session = Backbone.Model.extend({
       'password': password
     }, {
         success : (model, response) => {
-          console.log(model);
+
 
           window.localStorage.setItem('authtoken', model.get('authtoken'));
-          window.localStorage.setItem('userId',  model.get('email'));
-          window.localStorage.setItem('name',  model.get('name'));
+          window.localStorage.setItem('email', model.get('email'));
+          window.localStorage.setItem('name', model.get('name'));
+          window.localStorage.setItem('userId', model.get('userId'));
+          model.set('authtoken');
+
           model.unset('password');
           session.unset('password');
           router.navigate('home', {trigger: true});

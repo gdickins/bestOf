@@ -26,7 +26,7 @@ const MainView = Backbone.View.extend({
     this.$el.html(this.template());
 
     placesCollection.forEach((place) => {
-      // console.log(place);
+      
       let placeItemView = new PlaceItemView({
         model : place
       });
