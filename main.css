@@ -1,21 +1,21 @@
 /*
-Error: Invalid CSS after "...-family: Avenir": expected "{", was ";"
-        on line 9 of app/scss/main.scss
+Error: Invalid CSS after "    float: right": expected "{", was ";"
+        on line 67 of app/scss/main.scss
 
-4: @import "signupView.scss";
-5: @import "headerView.scss";
-6: 
-7: body {
-8: <<<<<<< HEAD
-9:     font-family: Avenir;
-10:     color: $text;
-11:     background: $background;
-12: =======
-13:   font-family: Avenir;
-14:   color: $text;
+62:     background-size: cover;
+63: }
+64: .session-container {
+65: 
+66: <<<<<<< HEAD
+67:     float: right;
+68:     display: flex;
+69:     flex-direction: column;
+70: 
+71:     .login {
+72:         background: #c0c0c0;
 
 Backtrace:
-app/scss/main.scss:9
+app/scss/main.scss:67
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1189:in `expected'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1125:in `expected'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1120:in `tok!'
@@ -43,4 +43,4 @@ app/scss/main.scss:9
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid CSS after \"...-family: Avenir\": expected \"{\", was \";\"\A         on line 9 of app/scss/main.scss\A \A 4: @import \"signupView.scss\";\A 5: @import \"headerView.scss\";\A 6: \A 7: body {\A 8: <<<<<<< HEAD\A 9:     font-family: Avenir;\A 10:     color: $text;\A 11:     background: $background;\A 12: =======\A 13:   font-family: Avenir;\A 14:   color: $text;"; }
+  content: "Error: Invalid CSS after \"    float: right\": expected \"{\", was \";\"\A         on line 67 of app/scss/main.scss\A \A 62:     background-size: cover;\A 63: }\A 64: .session-container {\A 65: \A 66: <<<<<<< HEAD\A 67:     float: right;\A 68:     display: flex;\A 69:     flex-direction: column;\A 70: \A 71:     .login {\A 72:         background: #c0c0c0;"; }
