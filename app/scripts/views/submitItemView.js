@@ -28,6 +28,7 @@ const SubmitItemView = Backbone.View.extend({
     let title = this.$('input[name="title"]').val();
     let address = this.$('input[name="address"]').val();
     let imgURL = this.$('input[name="imgURL"]').val();
+    let user_id = localStorage.getItem('userId');
     PlacesCollection.create({
       title: title,
       address: address,

@@ -16,10 +16,12 @@ const PlaceItemView = Backbone.View.extend({
     }
 
     let user = usersCollection.get(userId);
+    if (user) {
     user.fetch();
     user.on('change', (response) =>{
       this.render();
     });
+  }
 
   },
   tagName : 'li',
@@ -43,7 +45,7 @@ const PlaceItemView = Backbone.View.extend({
       <div class="images">
       </div>
 
-      <p class="username">Posted by: ${userObj.get('username')}</p>
+      <p class="username">Posted by: ${this.model.get('username')}</p>
 
       `;
      //return `
