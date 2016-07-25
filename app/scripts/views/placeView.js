@@ -27,7 +27,6 @@ const PlaceView = Backbone.View.extend({
   },
   voteFunction: function() {
     this.model.vote();
-    this.model.render();
   },
   tagName : 'div',
   className : 'place-view',
