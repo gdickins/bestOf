@@ -2,11 +2,19 @@
 @import "_variables.scss";
 @import "loginView.scss";
 @import "signupView.scss";
+@import "headerView.scss";
 
 body {
+<<<<<<< HEAD
     font-family: Avenir;
     color: $text;
     background: $background;
+=======
+  font-family: Avenir;
+  color: $text;
+  background: $background;
+  margin: 0;
+>>>>>>> 151c6ae225f06de50fd6f2f391e338716874da26
 }
 input {
     border: none;
@@ -60,6 +68,7 @@ h3 {
 }
 .session-container {
 
+<<<<<<< HEAD
     float: right;
     display: flex;
     flex-direction: column;
@@ -141,3 +150,24 @@ transform: translateX(-50%);
           font-size: 1.5rem;
         }
 }
+=======
+
+//
+// .ul-main {
+//   display: flex;
+//   flex-wrap: wrap;
+//   li {
+//     width: 50%;
+//   }
+// }
+//
+// .place-item-image {
+//     width: 60%;
+//   }
+//
+//   .images{
+//    width:50%;
+//   height:200px;
+//   background-size: cover;
+//   }
+>>>>>>> 151c6ae225f06de50fd6f2f391e338716874da26

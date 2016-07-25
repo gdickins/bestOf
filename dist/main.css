@@ -1,139 +1,46 @@
-#login {
-  width: 90%;
-  margin: 0 auto;
-  text-align: center; }
-  #login h2 {
-    text-align: 0; }
-  #login input {
-    border: none;
-    padding: 3%;
-    border-radius: 2px;
-    width: 90%;
-    display: block;
-    margin: 3% auto; }
-  #login .button {
-    background: #007A87;
-    color: #FFF; }
-    #login .button:hover {
-      background-color: #009AAB; }
+/*
+Error: Invalid CSS after "...-family: Avenir": expected "{", was ";"
+        on line 9 of app/scss/main.scss
 
-#signup h2 {
-  text-align: center; }
+4: @import "signupView.scss";
+5: @import "headerView.scss";
+6: 
+7: body {
+8: <<<<<<< HEAD
+9:     font-family: Avenir;
+10:     color: $text;
+11:     background: $background;
+12: =======
+13:   font-family: Avenir;
+14:   color: $text;
 
-body {
-  font-family: Avenir;
-  color: #484848;
-  background: #EDEFED; }
-
-input {
-  border: none;
-  padding: 3%;
-  border-radius: 2px;
-  width: 90%;
-  display: block;
-  margin: 3% auto; }
-
-.button {
-  background: #007A87;
-  color: #FFF; }
-  .button:hover {
-    background-color: #009AAB; }
-
-ul {
-  list-style: none; }
-
-.number {
-  font-size: 2rem; }
-
-h3 {
-  font-size: 1.5rem; }
-
-.place-item-image {
-  width: 25%;
-  background-image: contain; }
-
-.ul-main {
-  display: flex;
-  flex-wrap: wrap; }
-  .ul-main li {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center; }
-
-.place-item-image {
-  height: 480px;
-  width: auto; }
-
-.images {
-  width: 50%;
-  height: 200px;
-  background-size: cover; }
-
-.session-container {
-  float: right;
-  display: flex;
-  flex-direction: column; }
-  .session-container .login {
-    background: #c0c0c0;
-    border-radius: 5px;
-    color: #484848;
-    font-weight: bolder;
-    height: 2rem;
-    margin: .5rem; }
-    .session-container .login:hover {
-      background: #007A87;
-      color: white; }
-  .session-container .signup {
-    background: #c0c0c0;
-    border-radius: 5px;
-    color: #484848;
-    font-weight: bolder;
-    height: 2rem;
-    margin: .5rem; }
-    .session-container .signup:hover {
-      background: #007A87;
-      color: white; }
-  .session-container .logout-btn {
-    background: #c0c0c0;
-    border-radius: 5px;
-    color: #484848;
-    font-weight: bolder;
-    height: 2rem;
-    margin: .5rem; }
-    .session-container .logout-btn:hover {
-      background: #007A87;
-      color: white; }
-
-#nav {
-  position: absolute;
-  top: 3rem; }
-
-#nav ul {
-  display: flex;
-  float: right;
-  font-size: 1.6rem;
-  font-weight: bold; }
-  #nav ul li {
-    padding-right: 2rem; }
-
-#header {
-  background-image: url("assets/awBlue.png");
-  height: 145px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-position-x: 1rem; }
-
-.place-view {
-  text-align: center;
-  text-align: center;
-  position: absolute;
-  top: 90px;
-  left: 50%;
-  transform: translateX(-50%); }
-  .place-view h3 {
-    font-size: 2.5rem; }
-  .place-view p {
-    font-size: 1.5rem; }
-
-/*# sourceMappingURL=main.css.map */
+Backtrace:
+app/scss/main.scss:9
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1189:in `expected'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1125:in `expected'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1120:in `tok!'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:656:in `block'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:726:in `declaration_or_ruleset'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:676:in `block_child'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:665:in `block_contents'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:657:in `block'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:649:in `ruleset'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:675:in `block_child'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:668:in `block_contents'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:125:in `stylesheet'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:41:in `parse'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/engine.rb:406:in `_to_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/engine.rb:381:in `_render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/engine.rb:298:in `render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/exec/sass_scss.rb:391:in `run'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/exec/sass_scss.rb:63:in `process_result'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/exec/base.rb:52:in `parse'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/exec/base.rb:19:in `parse!'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/bin/sass:13:in `<top (required)>'
+/usr/local/bin/sass:23:in `load'
+/usr/local/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"...-family: Avenir\": expected \"{\", was \";\"\A         on line 9 of app/scss/main.scss\A \A 4: @import \"signupView.scss\";\A 5: @import \"headerView.scss\";\A 6: \A 7: body {\A 8: <<<<<<< HEAD\A 9:     font-family: Avenir;\A 10:     color: $text;\A 11:     background: $background;\A 12: =======\A 13:   font-family: Avenir;\A 14:   color: $text;"; }

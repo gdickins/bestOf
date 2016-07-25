@@ -20,7 +20,7 @@ routes: {
   'home'    : 'homeFunction',
   'places/:id' : 'placeDetailFunction',
   'submit' : 'submitPlaceFunction',
-  // '/*'      : 'loginFunction',
+  '/*'      : 'homeFunction',
 
 },
 

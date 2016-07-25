@@ -13,9 +13,10 @@ events:{
 logoutFunction: function(evt){
 
   console.log('session BEFORE', session);
-  let logoutSession = session.attributes;
-  console.log(logoutSession);
+  // let logoutSession = session.attributes;
+  // console.log(logoutSession);
   evt.preventDefault();
+  // if (!session.attributes.authtoken) 
   session.save(null,{
     url: `https://limitless-falls-88798.herokuapp.com/login`,
     success: (model, response) => {
