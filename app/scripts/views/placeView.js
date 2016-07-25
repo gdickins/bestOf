@@ -33,9 +33,8 @@ const PlaceView = Backbone.View.extend({
     return `
       <h3>${this.model.get('title')}</h3>
       <img src="${this.model.get('imgurl')}" class="place-item-image"/>
-
-      <p class="username">${this.model.get('user_id')}</p>
-      <p class="username">${userObj.get('username')}</p>
+      <p>${this.model.get('address')}</p>
+      <p class="username">Submitted by: ${userObj.get('name')}, AKA "${userObj.get('username')}"</p>
     `;
   },
   render : function() {
