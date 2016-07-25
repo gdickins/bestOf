@@ -8,31 +8,52 @@ import placesCollection from '../collections/PlacesCollection';
 import PlaceView from './placeView';
 
 const PlaceItemView = Backbone.View.extend({
+  initialize: function(){
+    //this.model = placesCollection.get(id);
+    let userId = this.model.get('user_id');
+    if (!usersCollection.get(userId)){
+      usersCollection.add({id: userId});
+    }
+
+    let user = usersCollection.get(userId);
+    user.fetch();
+    user.on('change', (response) =>{
+      this.render();
+    });
+    console.log(this.model);
+  },
   tagName : 'li',
   className : 'post-item-li',
   events: {
     'click .place-link' : 'placeRenderFunction'
   },
+
   placeRenderFunction: function(){
-    let placeView = new PlaceView();
-    placeView.render();
-    $('.container').empty().append(placeView.$el);
+
+    $('.container').empty().append('placeView');
     router.navigate(`places/${this.model.get('user_id')}`, {trigger:true});
+
   },
   template : function() {
-    let userId = this.model.get('user_id');
-    let userObj = usersCollection.get({
-      url: `https://limitless-falls-88798.herokuapp.com/users/` + userId
-    });
+  
+      let userObj = usersCollection.get(this.model.get('user_id'));
+
+
+    // console.log(userObj);
+
     return `
       <h3 class="place-link">${this.model.get('title')}</h3>
       <img src="${this.model.get('imgurl')}" class="place-item-image" />
       <p class="username">${this.model.get('user_id')}</p>
-      <p class="username">${this.model.get('username')}</p>
+      <p class="username">${userObj.get('username')}</p>
     `;
+
   },
   render : function() {
+    // placeRenderFunction();
+
     return this.$el.html(this.template());
+
   }
 });
 

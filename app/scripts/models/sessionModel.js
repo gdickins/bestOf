@@ -12,6 +12,7 @@ const Session = Backbone.Model.extend({
       authtoken: '',
       name: ''
   },
+
     // this model now successfully has the authtoken from the parse function
     parse: function(response) {
         if (response) {
@@ -20,6 +21,7 @@ const Session = Backbone.Model.extend({
             userId: response.id,
             authtoken: response.auth_token,
             name : response.name
+
       };
     }
   },
@@ -30,16 +32,18 @@ const Session = Backbone.Model.extend({
     },
     {
         success : (model, response) => {
-          this.unset('password');
-          window.localStorage.setItem('authtoken', response.auth_token);
-          // window.localStorage.setItem('email', response.email);
-          window.localStorage.setItem('name', response.name);
-          // window.localStorage.setItem('userId', response.id);
-          // model.set('authtoken', response.auth_token);
-          // model.set('email', response.email);
-          // model.set('name', response.name);
-          // model.set('userIt', response.id);
-          // model.unset('password');
+
+
+
+          window.localStorage.setItem('authtoken', model.get('authtoken'));
+          window.localStorage.setItem('email', model.get('email'));
+          window.localStorage.setItem('name', model.get('name'));
+          window.localStorage.setItem('userId', model.get('userId'));
+          model.set('authtoken');
+
+          model.unset('password');
+          session.unset('password');
+
           router.navigate('home', {trigger: true});
         },
         error : function() {
