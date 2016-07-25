@@ -22,6 +22,7 @@
 
 #header {
   margin: 0;
+<<<<<<< HEAD
   padding: 25px;
   background: #FFF;
   background-image: url("assets/awBlue.png");
@@ -109,6 +110,13 @@
   width: 5vw; }
   .place-view .vote-btn:hover {
     background-color: #009AAB; }
+=======
+  padding: 0;
+  background: #FFF; }
+  #header .session-container {
+    margin: 0;
+    padding: 5%; }
+>>>>>>> dbfd1f6aabbb0b1e54a2435acb8916e9b4627536
 
 body {
   font-family: Avenir;
@@ -130,4 +138,107 @@ input {
   .button:hover {
     background-color: #009AAB; }
 
+<<<<<<< HEAD
+=======
+ul {
+  list-style: none; }
+
+.number {
+  font-size: 2rem; }
+
+h3 {
+  font-size: 1.5rem; }
+
+.place-item-image {
+  width: 25%;
+  background-image: contain; }
+
+.ul-main {
+  display: flex;
+  flex-wrap: wrap; }
+  .ul-main li {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+
+.place-item-image {
+  height: 480px;
+  width: auto; }
+
+.images {
+  width: 50%;
+  height: 200px;
+  background-size: cover; }
+
+.session-container {
+  float: right;
+  display: flex;
+  flex-direction: column; }
+  .session-container .login {
+    background: #c0c0c0;
+    border-radius: 5px;
+    color: #484848;
+    font-weight: bolder;
+    height: 2rem;
+    margin: .5rem; }
+    .session-container .login:hover {
+      background: #007A87;
+      color: white; }
+  .session-container .signup {
+    background: #c0c0c0;
+    border-radius: 5px;
+    color: #484848;
+    font-weight: bolder;
+    height: 2rem;
+    margin: .5rem; }
+    .session-container .signup:hover {
+      background: #007A87;
+      color: white; }
+  .session-container .logout-btn {
+    background: #c0c0c0;
+    border-radius: 5px;
+    color: #484848;
+    font-weight: bolder;
+    height: 2rem;
+    margin: .5rem; }
+    .session-container .logout-btn:hover {
+      background: #007A87;
+      color: white; }
+
+#nav {
+  position: absolute;
+  top: 3rem; }
+
+#nav ul {
+  display: flex;
+  float: right;
+  font-size: 1.6rem;
+  font-weight: bold; }
+  #nav ul li {
+    padding-right: 2rem; }
+
+#header .session-container {
+  padding-top: 0rem; }
+
+#header {
+  background-image: url("assets/awBlue.png");
+  height: 145px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-x: 1rem; }
+
+.place-view {
+  text-align: center;
+  text-align: center;
+  position: absolute;
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%); }
+  .place-view h3 {
+    font-size: 2.5rem; }
+  .place-view p {
+    font-size: 1.5rem; }
+
+>>>>>>> dbfd1f6aabbb0b1e54a2435acb8916e9b4627536
 /*# sourceMappingURL=main.css.map */
