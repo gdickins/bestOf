@@ -42,7 +42,7 @@ const Session = Backbone.Model.extend({
           model.set('authtoken');
 
           model.unset('password');
-          session.unset('password');
+          // session.unset('password');
 
           router.navigate('home', {trigger: true});
         },
