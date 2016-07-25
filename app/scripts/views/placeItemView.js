@@ -20,6 +20,7 @@ const PlaceItemView = Backbone.View.extend({
     user.on('change', (response) =>{
       this.render();
     });
+
   },
   tagName : 'li',
   className : 'post-item-li',

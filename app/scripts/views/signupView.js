@@ -6,11 +6,12 @@ import session from '../models/sessionModel';
 const SignupView = Backbone.View.extend({
   initialize: function() {},
   tagName: 'form',
-  idName: 'signUp',
+  id: 'signUp',
   events: {
-    'click input[type="submit"]': 'signUpfunction'
+    'click input[type="submit"]': 'signUpFunction',
+    'click input[name="cancel"]': 'loginFunction',
   },
-  signUpfunction : function(evt) {
+  signUpFunction : function(evt) {
     evt.preventDefault();
     let name = this.$('input[name="name"]').val();
     let username = this.$('input[name="username"]').val();
@@ -49,7 +50,10 @@ const SignupView = Backbone.View.extend({
         }
   });
   },
-
+  loginFunction: function(evt) {
+    evt.preventDefault();
+    router.navigate('login', {trigger:true});
+  },
   template: function(){
     return `
       <h2>Sign Up</h2>
@@ -57,8 +61,8 @@ const SignupView = Backbone.View.extend({
       <input type="text" name="usename" placeholder="username">
       <input type="text" name="email" placeholder="email">
       <input type="password" name="password" placeholder="password">
-      <input type="submit" name="submit" value="submit">
-      <input type="button" name="cancel" value="cancel">
+      <input class="button" type="submit" name="submit" value="submit">
+      <input class="button" type="button" name="cancel" value="cancel">
     `;
   },
   render: function() {

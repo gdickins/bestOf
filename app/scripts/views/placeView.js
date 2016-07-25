@@ -11,7 +11,6 @@ import PlaceItemView from '../views/placeItemView';
 //this.model got changed to sesson. if the login and logout work then change back. but this.model is undefined.
 const PlaceView = Backbone.View.extend({
   initialize: function(id) {
-
     this.model = placesCollection.get(id);
     let userId = this.model.get('user_id');
     if (!usersCollection.get(userId)){
@@ -29,7 +28,6 @@ const PlaceView = Backbone.View.extend({
   template : function()  {
 
     let userObj = usersCollection.get(this.model.get('user_id'));
-
     // console.log(usersCollection);
     console.log(userObj);
     return `
