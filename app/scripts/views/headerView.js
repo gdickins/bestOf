@@ -5,6 +5,7 @@ import router from '../router';
 import LoginView from './loginView';
 import LogoutView from './logoutView';
 import SignupView from './signupView';
+import MainView from './mainView';
 
 const HeaderView = Backbone.View.extend({
   tagName: 'div',
@@ -12,7 +13,9 @@ const HeaderView = Backbone.View.extend({
   events: {
     'click .login': 'loginFunction',
     'click .signup': 'signupFunction',
-    'click.home-li': 'homeFunction'
+    'click .home': 'homeFunction',
+    'click .submit': 'submitFunction'
+
   },
   loginFunction: function(){
     router.navigate('login', {trigger:true});
@@ -21,7 +24,14 @@ const HeaderView = Backbone.View.extend({
     router.navigate('signup', {trigger:true});
   },
 
-  
+homeFunction: function(){
+  router.navigate('home', {trigger:true});
+},
+
+submitFunction: function(){
+  router.navigate('submit', {trigger:true});
+},
+
   template: function() {
     return `
     <div id="header">
@@ -31,8 +41,8 @@ const HeaderView = Backbone.View.extend({
       </section>
       <nav id="nav">
         <ul>
-          <li class="home-li">Home</li>
-          <li class="post-li">Post</li>
+          <li class="home" id="#home">Home</li>
+          <li class="submit" id="#submit">Post</li>
 
         </ul>
       </nav>
