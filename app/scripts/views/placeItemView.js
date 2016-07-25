@@ -37,15 +37,11 @@ const PlaceItemView = Backbone.View.extend({
   template : function() {
 
       let userObj = usersCollection.get(this.model.get('user_id'));
-
-
     // console.log(userObj);
-    // <img src="${this.model.get('imgurl')}" class="place-item-image" />
 
     return `
       <h3 class="place-link">${this.model.get('title')}</h3>
-      <div class="images">
-      </div>
+      <img src="${this.model.get('imgurl')}" class="place-item-image" />
       <p class="username">${this.model.get('user_id')}</p>
       <p class="username">${userObj.get('username')}</p>
     `;

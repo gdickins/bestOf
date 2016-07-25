@@ -6,8 +6,6 @@ import usersCollection from '../collections/UsersCollection';
 import placesCollection from '../collections/PlacesCollection';
 import PlaceItemView from '../views/placeItemView';
 
-
-
 //this.model got changed to sesson. if the login and logout work then change back. but this.model is undefined.
 const PlaceView = Backbone.View.extend({
   initialize: function(id) {
@@ -23,18 +21,25 @@ const PlaceView = Backbone.View.extend({
       this.render();
     });
   },
+  events: {
+    'click .vote-btn': 'voteFunction'
+  },
+  voteFunction: function() {
+    this.model.vote();
+  },
   tagName : 'div',
   className : 'place-view',
   template : function()  {
 
     let userObj = usersCollection.get(this.model.get('user_id'));
     // console.log(usersCollection);
-    console.log(userObj);
+    // console.log(userObj);
     return `
       <h3>${this.model.get('title')}</h3>
       <img src="${this.model.get('imgurl')}" class="place-item-image"/>
       <p>${this.model.get('address')}</p>
       <p class="username">Submitted by: ${userObj.get('name')}, AKA "${userObj.get('username')}"</p>
+      <button class="vote-btn">Vote</button>
     `;
   },
   render : function() {
