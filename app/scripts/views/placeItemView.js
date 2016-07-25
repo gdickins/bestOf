@@ -20,7 +20,7 @@ const PlaceItemView = Backbone.View.extend({
     user.on('change', (response) =>{
       this.render();
     });
-    console.log(this.model);
+    // console.log(this.model);
   },
   tagName : 'li',
   className : 'post-item-li',
@@ -35,7 +35,7 @@ const PlaceItemView = Backbone.View.extend({
 
   },
   template : function() {
-  
+
       let userObj = usersCollection.get(this.model.get('user_id'));
 
 
