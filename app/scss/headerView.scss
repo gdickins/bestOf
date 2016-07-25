@@ -1,14 +1,59 @@
-
 // #header{
 //   background-image: url('/assets/awBlue.png' );
 //   height:200px;
 // }
 #header {
-  margin: 0;
-  padding: 0;
-  background: #FFF;
-  .session-container {
     margin: 0;
-    padding: 5%;
-  }
+    padding: 25px;
+    background: #FFF;
+    background-image: url('assets/awBlue.png' );
+    // height: 145px;
+    background-repeat: no-repeat;
+    background-position: center;
+    // background-position-x: 1rem;
+    .session-container {
+        margin-top: 15%;
+        // padding: 5%;
+        display: flex;
+        justify-content: center;
+        margin-right: 2%;
+        button {
+            justify-content: flex-end;
+            border: none;
+            background: $btn-background;
+            color: $btn-color;
+            margin: 0 2%;
+            border-radius: 2px;
+            &:hover {
+                background-color: $btn-hover;
+            }
+        }
+        .logout-btn {
+            border: none;
+            background: $btn-background;
+            color: $btn-color;
+            padding: 12%;
+            border-radius: 2px;
+            &:hover {
+                background-color: $btn-hover;
+            }
+        }
+    }
+    #nav {
+      text-align: center;
+      ul {
+        padding: 0;
+        margin: 0;
+      }
+      li {
+        list-style-type: none;
+        display: inline-block;
+        margin: 1% auto;
+        padding: 0 5%;
+        &:hover {
+          border: solid 1px $text;
+          border-radius: 2px;
+        }
+      }
+    }
 }

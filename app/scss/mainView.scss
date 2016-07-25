@@ -1,6 +1,41 @@
-
-.place-item-image {
-  width: 25%;
-  // background-image: contain;
-  // display:flex;
+.ul-main {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  li {
+    width: 40%;
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0 5%;
+  }
 }
+  .images{
+  // width:50%;
+  height:200px;
+  background-size: cover;
+  }
+
+  .place-view{
+  text-align: center;
+  position: absolute;
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+          h3{
+            font-size: 2.5rem;
+          }
+          p{
+            font-size: 1.5rem;
+          }
+  }
+
+  .place-link {
+    text-align: center;
+    &:hover {
+      border: solid $text 1px;
+      border-radius: 2px;
+      // padding: 1%;
+    }
+  }
