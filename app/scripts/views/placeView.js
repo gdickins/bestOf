@@ -48,11 +48,11 @@ const PlaceView = Backbone.View.extend({
     // console.log(usersCollection);
 
     return `
-      <h3># ${this.model.get('user_id')} ${this.model.get('title')}</h3>
+      <h3 class="h3-place-view"># ${this.model.get('user_id')} ${this.model.get('title')}</h3>
       <img src="${this.model.get('imgurl')}" class="place-item-image"/>
       <p>${this.model.get('address')}</p>
       <p class="username">Submitted by: ${userObj.get('name')}, AKA "${userObj.get('username')}"</p>
-      <button class="vote-btn">Vote </button><span>${this.model.get('vote_count')}</span>
+      <button class="vote-btn">Vote </button><span>${this.model.get('NewRank')}</span>
     `;
   },
   render : function() {

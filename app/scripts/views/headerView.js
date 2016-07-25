@@ -35,7 +35,6 @@ submitFunction: function(){
 },
   template: function() {
     return `
-    <div id="header">
       <section class="session-container">
         <button class="login">Login</button>
         <button class="signup">Signup</button>
@@ -47,7 +46,6 @@ submitFunction: function(){
 
         </ul>
       </nav>
-    </div>
     `;
   },
   render: function() {

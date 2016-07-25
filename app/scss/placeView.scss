@@ -1,0 +1,26 @@
+.place-view {
+
+  .h3-place-view {
+      margin-top: 50%;
+  }
+
+  .place-item-image {
+    // width: 25%;
+    // height: 20vh;
+    width: auto;
+    background-image: contain;
+    // display:flex;
+  }
+  .vote-btn {
+    background: $btn-background;
+    color: $btn-color;
+    border: none;
+    border-radius: 2px;
+    width: 5vw;
+    &:hover {
+        background-color: $btn-hover;
+        
+    }
+  }
+
+}
