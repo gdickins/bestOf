@@ -20,10 +20,19 @@
 #signup h2 {
   text-align: center; }
 
+#header {
+  margin: 0;
+  padding: 0;
+  background: #FFF; }
+  #header .session-container {
+    margin: 0;
+    padding: 5%; }
+
 body {
   font-family: Avenir;
   color: #484848;
-  background: #EDEFED; }
+  background: #EDEFED;
+  margin: 0; }
 
 input {
   border: none;
