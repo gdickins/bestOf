@@ -20,7 +20,7 @@ const PlaceItemView = Backbone.View.extend({
     user.on('change', (response) =>{
       this.render();
     });
-    // console.log(this.model);
+
   },
   tagName : 'li',
   className : 'post-item-li',
@@ -40,10 +40,12 @@ const PlaceItemView = Backbone.View.extend({
 
 
     // console.log(userObj);
+    // <img src="${this.model.get('imgurl')}" class="place-item-image" />
 
     return `
       <h3 class="place-link">${this.model.get('title')}</h3>
-      <img src="${this.model.get('imgurl')}" class="place-item-image" />
+      <div class="images">
+      </div>
       <p class="username">${this.model.get('user_id')}</p>
       <p class="username">${userObj.get('username')}</p>
     `;
@@ -52,7 +54,9 @@ const PlaceItemView = Backbone.View.extend({
   render : function() {
     // placeRenderFunction();
 
-    return this.$el.html(this.template());
+     this.$el.html(this.template());
+    this.$('.images').css('background-image', `url("${this.model.get('imgurl')}")`);
+    return this;
 
   }
 });

@@ -2,6 +2,12 @@ import $ from 'jquery';
 import Backbone from 'backbone';
 import PlacesCollection from '../collections/PlacesCollection';
 import router from '../router';
+//import MainView from '../views/mainView';
+import HeaderView from '../views/headerView';
+import PlaceView from '../views/placeView';
+
+
+
 
 const SubmitItemView = Backbone.View.extend({
   tagName: 'div',
@@ -28,7 +34,7 @@ const SubmitItemView = Backbone.View.extend({
       imgURL: imgURL
     }, {
       success: function() {
-        router.navigate('main', {trigger: true});
+        router.navigate('home', {trigger: true});
       }
     });
   },

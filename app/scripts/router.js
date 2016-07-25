@@ -20,7 +20,8 @@ routes: {
   'home'    : 'homeFunction',
   'places/:id' : 'placeDetailFunction',
   'submit' : 'submitPlaceFunction',
-  // '/*'      : 'loginFunction',
+  '/*'      : 'homeFunction',
+
 },
 
 loginFunction : function(){
@@ -48,15 +49,17 @@ placeDetailFunction : function(id){
   placesCollection.off();
   let header = new HeaderView();
   let placeView = new PlaceView(id);
-
   header.render();
   placeView.render();
   $('.container').empty().append(header.$el).append(placeView.$el);
 },
 submitPlaceFunction : function () {
   let submitItem = new SubmitItemView();
+  let header = new HeaderView();
+  //let main = new MainView();
+  header.render();
   submitItem.render();
-  $('.container').empty().append(submitItem.$el);
+  $('.container').empty().append(header.$el).append(submitItem.$el);
 },
 });
 
