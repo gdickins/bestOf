@@ -35,7 +35,7 @@ const PlaceItemView = Backbone.View.extend({
 
   },
   template : function() {
-  
+
       let userObj = usersCollection.get(this.model.get('user_id'));
 
 
