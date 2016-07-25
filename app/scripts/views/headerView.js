@@ -23,7 +23,9 @@ const HeaderView = Backbone.View.extend({
   signupFunction: function() {
     router.navigate('signup', {trigger:true});
   },
-
+  postFunction: function() {
+    router.navigate('submit', {trigger:true});
+  },
 homeFunction: function(){
   router.navigate('home', {trigger:true});
 },
@@ -31,7 +33,6 @@ homeFunction: function(){
 submitFunction: function(){
   router.navigate('submit', {trigger:true});
 },
-
   template: function() {
     return `
     <div id="header">
