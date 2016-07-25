@@ -2,4 +2,18 @@
   width: 25%;
   background-image: contain; }
 
+.ul-main {
+  display: flex;
+  flex-wrap: wrap; }
+  .ul-main li {
+    width: 50%; }
+
+.place-item-image {
+  width: 60%; }
+
+.images {
+  width: 50%;
+  height: 200px;
+  background-size: cover; }
+
 /*# sourceMappingURL=main.css.map */
