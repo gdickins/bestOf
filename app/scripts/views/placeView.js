@@ -11,7 +11,19 @@ import PlaceItemView from '../views/placeItemView';
 //this.model got changed to sesson. if the login and logout work then change back. but this.model is undefined.
 const PlaceView = Backbone.View.extend({
   initialize: function(id) {
+
+    // if (!placesCollection.get(id)){
+    //   placesCollection.add({id: id});
+    // }
+    // console.log('test: ', placesCollection.get(id));
     this.model = placesCollection.get(id);
+    // console.log(this.model);
+    // this.model.fetch();
+
+    // this.model.on('change', (response) =>{
+    //   this.render();
+    // });
+
     let userId = this.model.get('user_id');
     if (!usersCollection.get(userId)){
       usersCollection.add({id: userId});
@@ -29,13 +41,13 @@ const PlaceView = Backbone.View.extend({
 
     let userObj = usersCollection.get(this.model.get('user_id'));
     // console.log(usersCollection);
+    // <p class="username">${this.model.get('user_id')}</p>
+
     console.log(userObj);
     return `
-      <h3>${this.model.get('title')}</h3>
+      <h3># ${this.model.get('user_id')} ${this.model.get('title')}</h3>
       <img src="${this.model.get('imgurl')}" class="place-item-image"/>
-
-      <p class="username">${this.model.get('user_id')}</p>
-      <p class="username">${userObj.get('username')}</p>
+      <p class="username"> Posted by: ${userObj.get('username')}</p>
     `;
   },
   render : function() {

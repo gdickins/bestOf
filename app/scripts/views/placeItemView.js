@@ -41,13 +41,13 @@ const PlaceItemView = Backbone.View.extend({
 
     // console.log(userObj);
     // <img src="${this.model.get('imgurl')}" class="place-item-image" />
-
+// <p class="username">${this.model.get('user_id')}</p>
     return `
-      <h3 class="place-link">${this.model.get('title')}</h3>
+      <h3 class="place-link"><span class="number">#${this.model.get('user_id')}</span>  ${this.model.get('title')}</h3>
       <div class="images">
       </div>
-      <p class="username">${this.model.get('user_id')}</p>
-      <p class="username">${userObj.get('username')}</p>
+
+      <p class="username">Posted by: ${userObj.get('username')}</p>
     `;
 
   },
