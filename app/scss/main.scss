@@ -63,10 +63,10 @@ h3 {
 }
 .session-container {
 
-<<<<<<< HEAD
     float: right;
     display: flex;
     flex-direction: column;
+
 
     .login {
         background: #c0c0c0;
@@ -123,6 +123,10 @@ h3 {
         padding-right: 2rem;
     }
 }
+#header .session-container{
+  padding-top: 0rem;
+
+}
 #header {
     background-image: url('assets/awBlue.png' );
     height: 145px;
@@ -145,7 +149,6 @@ transform: translateX(-50%);
           font-size: 1.5rem;
         }
 }
-=======
 
 //
 // .ul-main {
@@ -165,4 +168,3 @@ transform: translateX(-50%);
 //   height:200px;
 //   background-size: cover;
 //   }
->>>>>>> 151c6ae225f06de50fd6f2f391e338716874da26
