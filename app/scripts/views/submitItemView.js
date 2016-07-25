@@ -14,21 +14,22 @@ const SubmitItemView = Backbone.View.extend({
     `;
   },
   events: {
-    'click input[type="submit"]' : 'submitPlaceFunction',
+    'click input[name="submit"]' : 'submitPlaceFunction',
   },
   submitPlaceFunction: function(evt) {
     evt.preventDefault();
-    console.log('Event trigger');
-    let title = this.$('input[name="title"]');
-    let address = this.$('input[name="address"]');
-    let imgURL = this.$('input[name="imgURL"]');
-    postsCollection.create({
+    console.log('Event trigger' );
+    let title = this.$('input[name="title"]').val();
+    let address = this.$('input[name="address"]').val();
+    let imgURL = this.$('input[name="imgURL"]').val();
+    PlacesCollection.create({
       title: title,
       address: address,
       imgURL: imgURL
     }, {
       success: function() {
-        router.navigate('main', {trigger: true});
+        // router.navigate('main', {trigger: true});
+        console.log('I think it worked!');
       }
     });
   },

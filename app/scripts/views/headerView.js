@@ -12,7 +12,8 @@ const HeaderView = Backbone.View.extend({
   events: {
     'click .login': 'loginFunction',
     'click .signup': 'signupFunction',
-    'click.home-li': 'homeFunction'
+    'click .home-li': 'homeFunction',
+    'click .post-li': 'postFunction'
   },
   loginFunction: function(){
     router.navigate('login', {trigger:true});
@@ -20,8 +21,11 @@ const HeaderView = Backbone.View.extend({
   signupFunction: function() {
     router.navigate('signup', {trigger:true});
   },
+  postFunction: function() {
+    router.navigate('submit', {trigger:true});
+  },
 
-  
+
   template: function() {
     return `
     <div id="header">
