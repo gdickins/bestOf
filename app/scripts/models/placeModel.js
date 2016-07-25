@@ -15,6 +15,7 @@ const PlaceModel = Backbone.Model.extend({
     this.set('vote_count', NewRank);
     this.save();
     console.log(NewRank);
+    return this;    
   }
 });
 
