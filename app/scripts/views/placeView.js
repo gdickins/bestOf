@@ -19,6 +19,7 @@ const PlaceView = Backbone.View.extend({
     user.fetch();
     user.on('change', (response) =>{
       this.render();
+      this.model.render();
     });
   },
   events: {
@@ -33,13 +34,13 @@ const PlaceView = Backbone.View.extend({
 
     let userObj = usersCollection.get(this.model.get('user_id'));
     // console.log(usersCollection);
-    // console.log(userObj);
+    console.log(this.model);
     return `
       <h3>${this.model.get('title')}</h3>
       <img src="${this.model.get('imgurl')}" class="place-item-image"/>
       <p>${this.model.get('address')}</p>
       <p class="username">Submitted by: ${userObj.get('name')}, AKA "${userObj.get('username')}"</p>
-      <button class="vote-btn">Vote</button>
+      <button class="vote-btn">Vote </button><span>${this.model.get('vote_count')}</span>
     `;
   },
   render : function() {

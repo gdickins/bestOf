@@ -2,11 +2,13 @@
 @import "_variables.scss";
 @import "loginView.scss";
 @import "signupView.scss";
+@import "headerView.scss";
 
 body {
   font-family: Avenir;
   color: $text;
   background: $background;
+  margin: 0;
 }
 input {
   border: none;
